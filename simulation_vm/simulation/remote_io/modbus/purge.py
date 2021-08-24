@@ -52,7 +52,7 @@ def updating_writer(a):
 
     data = json.loads(s.recv(1500))
     valve_pos = int(data["state"]["purge_valve_pos"]/100.0*65535)
-    flow = int(data["outputs"]["purge_flow"]/500.0*65535)
+    flow = int(data["outputs"]["purge_flow"]/2000.0*65535)
     print data
     if valve_pos > 65535:
         valve_pos = 65535
